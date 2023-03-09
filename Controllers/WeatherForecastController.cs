@@ -29,4 +29,12 @@ public class WeatherForecastController : ControllerBase
         })
         .ToArray();
     }
+
+    [HttpPost(Name = "PostWeatherForecast")]
+    public async Task Post()
+    {
+        using var streamReader = new StreamReader(Request.Body);
+        var body = await streamReader.ReadToEndAsync();
+        _logger.LogInformation("Request Body: {Body}", body);
+    }
 }
