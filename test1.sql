@@ -1,1 +1,1 @@
-SELECT field FROM Table t
+SELECT * FROM Escher.EYTD
